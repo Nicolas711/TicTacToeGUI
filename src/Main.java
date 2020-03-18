@@ -2,9 +2,9 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
@@ -54,6 +54,7 @@ public class Main extends Application {
         }
 
 
+        root.setTop(getMenu());
         root.setCenter(gridPane);
 
 
@@ -62,6 +63,34 @@ public class Main extends Application {
         window.show();
 
 
+    }
+
+    private MenuBar getMenu() {
+
+        MenuBar menuBar = new MenuBar();
+        Menu gameMenu = new Menu("Game");
+        MenuItem newGame = new MenuItem("New Game");
+        MenuItem exitGame = new MenuItem("Exit Game");
+
+        newGame.setOnAction((ActionEvent event) -> newGameClicked());
+        exitGame.setOnAction((ActionEvent event) -> exitGameGameClicked());
+
+        gameMenu.getItems().addAll(newGame, exitGame);
+        menuBar.getMenus().add(gameMenu);
+
+        return menuBar;
+    }
+
+    private void newGameClicked() {
+
+        System.out.println("New Game clicked");
+        // reset buttons and so on. Code to be placed here...
+    }
+
+    private void exitGameGameClicked() {
+
+        System.out.println("Exit Game clicked");
+        // Exit Game Action to be placed here...
     }
 
     public void buttonEvent(Button button, Button ButtonList[], BorderPane root) {
