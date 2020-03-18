@@ -11,8 +11,6 @@ import javafx.stage.Stage;
 
 public class Main extends Application
 {
-	
-	
 	int a = 0;
 	
 	public static void main(String[] args)
@@ -21,9 +19,6 @@ public class Main extends Application
 	}
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		
-		
-		
 		
 		Stage window = primaryStage;
 		window.setTitle("TicTacToe");
@@ -51,11 +46,7 @@ public class Main extends Application
 	        	gridPane.add(button, i, j);
     			ID++;
 	        	
-    			
-    				button.setOnAction((ActionEvent event) -> buttonEvent(button,ButtonList,root));
-    			
-    				
-	        	
+    			button.setOnAction((ActionEvent event) -> buttonEvent(button,ButtonList,root));   	
 	        }
 	       }
 	     
@@ -63,15 +54,9 @@ public class Main extends Application
 	       
 	       root.setCenter(gridPane);
 	       
-	  
-	       
-	       
 	       Scene scene = new Scene(root,300,300);
 	       window.setScene(scene);
 	       window.show();
-	       
-	       
-		
 	}
 	public void buttonEvent(Button button, Button ButtonList[],BorderPane root) {
 		String Spieler = "";
@@ -164,9 +149,6 @@ public class Main extends Application
 	    		   return 1;
 	    	   }
 	    	   
-	       
-		
-		
 		return 2;
 	}
 }
